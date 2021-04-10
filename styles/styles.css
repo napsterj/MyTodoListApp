@@ -1,0 +1,15 @@
+.center {
+    position: absolute;
+    left:50%;
+    top:50%;
+    padding: 10px;
+    bottom:50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-width{
+    max-width: 30rem;
+}
+.hide {
+    display: none;
+}

@@ -59,7 +59,7 @@ class Todos {
       td.innerText = "No pending tasks found";
       emptyTR.appendChild(td);
       emptyTR.id = "empty";
-      emptyTR.className = "table-light text-center";
+      emptyTR.className = "table-warning text-center";
       todos.appendChild(emptyTR);
     }
   
@@ -98,23 +98,24 @@ class Todos {
   
     // Show added or removed messages
     displayRelevantMessage(isAdded) {
-      const divMessage = document.querySelector("#message");
-      divMessage.className = "alert alert-dismissible alert-primary text-center";
-      divMessage.innerText = `Task ${isAdded ? "added" : "removed"} successfully`;
+      
+      const span = document.querySelector("#message");
+      span.className = "badge badge-primary mb-3";
+      span.innerText = `Task ${isAdded ? "added" : "removed"} successfully`;
   
       //hide message after 3 seconds
-      setTimeout(() => (divMessage.className = "hide"), 3000);
+      setTimeout(() => (span.className = "hide"), 3000);
     }
   
     // Display error messages
     displayValidationErrors() {
-      const divError = document.querySelector("#errors");
+      const spanError = document.querySelector("#errors");
       const errorMessage = inputTaskName.value === "" ? "Task name" : "Task date";
-      divError.classList = "alert alert-dismissible alert-danger text-center";
-      divError.innerText = errorMessage + " is required field.";
+      spanError.classList = "badge badge-danger text-center mb-2";
+      spanError.innerText = errorMessage + " is required field.";
   
       //hide message after 3 seconds
-      setTimeout(() => (divError.className = "hide"), 3000);
+      setTimeout(() => (spanError.className = "hide"), 3000);
     }
   
     // Get all task from store

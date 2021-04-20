@@ -99,6 +99,7 @@ class Todos {
     // Show added or removed messages
     displayRelevantMessage(isAdded) {
       
+      
       const span = document.querySelector("#message");
       span.className = "badge badge-primary mb-3";
       span.innerText = `Task ${isAdded ? "added" : "removed"} successfully`;
